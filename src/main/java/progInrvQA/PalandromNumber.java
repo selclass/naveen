@@ -2,13 +2,27 @@ package progInrvQA;
 
 public class PalandromNumber {
 
-// this is added in the github added	
 	public static void isPalndrom(int num) {
-	// this is in github
-	 // now i added one more in the W7 added		
-	}	
-	
-	// this is on line 12
 
+		int rem = 0;
+		int sum = 0;
+		int temp; 
 
+		temp = num;
+
+		while (num > 0) {
+			rem = num % 10;
+			sum = (sum * 10) + rem;
+			num = num / 10;
+		}
+		if (temp == sum) {
+			System.out.println("its palandrom");
+		} else {
+			System.out.println("its not palandrom");
+		}
+	}
+
+	public static void main(String args[]) {
+		isPalndrom(151);
+	}
 }
