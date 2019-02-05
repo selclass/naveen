@@ -1,34 +1,22 @@
 package progInrvQA;
 
 public class Test {
-    public static boolean isPalandrom(int num) {
-        
-        int rem = 0;
-        int sum = 0;
-        int tem;
-        
-        tem = num;
-        
-        while(num>0) {
-            rem = num % 10;
-            sum = (sum * 10) + rem;
-            num = num / 10;
-        }
-        if(tem == sum){        	
-            return true;
-           
-        } else 
-            return false;
-    } 
-    
-    public static void palandromRange(int num) {
-        for (int i=0; i<=num; i++) {
-         if(isPalandrom(i))
-         System.out.print(i +" ");
-        }
-    }
-    
+	public static int reverseInt(int input) {
+	    long reversedNum = 0;
+	    long input_long = input;
+
+	    while (input_long != 0) {
+	        reversedNum = reversedNum * 10 + input_long % 10;
+	        input_long = input_long / 10;
+	    }
+
+	    if (reversedNum > Integer.MAX_VALUE || reversedNum < Integer.MIN_VALUE) {
+	        throw new IllegalArgumentException();
+	    }
+	    return (int) reversedNum;
+	}
+ 
     public static void main(String[] args ) {
-    	palandromRange(300);
+    	System.out.println(reverseInt(12345));
     }
 }
